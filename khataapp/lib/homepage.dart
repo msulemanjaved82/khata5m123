@@ -72,114 +72,143 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                        height: 80,
-                        child: Card(
-                          elevation: 3,
-                          child: Container(
-                            padding: const EdgeInsets.all(0),
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.change_circle_outlined,
-                                size: 30,
-                                color: Color.fromARGB(255, 99, 99, 99),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Card(
+                            elevation: 3,
+                            child: Container(
+                              padding: const EdgeInsets.all(0),
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.change_circle_outlined,
+                                  size: 30,
+                                  color: Color.fromARGB(255, 99, 99, 99),
+                                ),
+                                onPressed: () {},
+                                alignment: Alignment.center,
                               ),
-                              onPressed: () {},
-                              alignment: Alignment.center,
                             ),
                           ),
                         ),
-                      ),
-                      const Text(
-                        'Change',
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                        height: 80,
-                        child: Card(
-                          elevation: 3,
-                          child: Container(
-                            padding: const EdgeInsets.all(0),
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.arrow_upward,
-                                size: 30,
-                                color: Color.fromARGB(255, 99, 99, 99),
+                        const Text(
+                          'Change',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Card(
+                            elevation: 3,
+                            child: Container(
+                              padding: const EdgeInsets.all(0),
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.arrow_upward,
+                                  size: 30,
+                                  color: Color.fromARGB(255, 99, 99, 99),
+                                ),
+                                onPressed: () {},
+                                alignment: Alignment.center,
                               ),
-                              onPressed: () {},
-                              alignment: Alignment.center,
                             ),
                           ),
                         ),
-                      ),
-                      const Text(
-                        'Transfer',
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                        height: 80,
-                        child: Card(
-                          elevation: 3,
-                          child: Container(
-                            padding: const EdgeInsets.all(0),
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.arrow_downward,
-                                size: 30,
-                                color: Color.fromARGB(255, 99, 99, 99),
+                        const Text(
+                          'Transfer',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Card(
+                            elevation: 3,
+                            child: Container(
+                              padding: const EdgeInsets.all(0),
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.arrow_downward,
+                                  size: 30,
+                                  color: Color.fromARGB(255, 99, 99, 99),
+                                ),
+                                onPressed: () {},
+                                alignment: Alignment.center,
                               ),
-                              onPressed: () {},
-                              alignment: Alignment.center,
                             ),
                           ),
                         ),
-                      ),
-                      const Text(
-                        'Income',
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                        height: 80,
-                        child: Card(
-                          elevation: 3,
-                          child: Container(
-                            padding: const EdgeInsets.all(0),
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.menu_book,
-                                size: 30,
-                                color: Color.fromARGB(255, 99, 99, 99),
+                        const Text(
+                          'Income',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Card(
+                            elevation: 3,
+                            child: Container(
+                              padding: const EdgeInsets.all(0),
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.receipt_long,
+                                  size: 30,
+                                  color: Color.fromARGB(255, 99, 99, 99),
+                                ),
+                                onPressed: () {},
+                                alignment: Alignment.center,
                               ),
-                              onPressed: () {},
-                              alignment: Alignment.center,
                             ),
                           ),
                         ),
-                      ),
-                      const Text(
-                        'More',
-                      ),
-                    ],
-                  ),
-                ],
+                        const Text(
+                          'Receipts',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Card(
+                            elevation: 3,
+                            child: Container(
+                              padding: const EdgeInsets.all(0),
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.menu_book,
+                                  size: 30,
+                                  color: Color.fromARGB(255, 99, 99, 99),
+                                ),
+                                onPressed: () {},
+                                alignment: Alignment.center,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          'More',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 22),
               const Text(
@@ -190,76 +219,84 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              SizedBox(
-                height: 65,
-                child: Card(
-                  child: ListTile(
-                    leading: const Icon(Icons.home, size: 30.0),
-                    title: const Column(
-                      children: [
-                        Text(
-                          'Rental Income',
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 65,
+                      child: Card(
+                        child: ListTile(
+                          leading: const Icon(Icons.home, size: 30.0),
+                          title: const Column(
+                            children: [
+                              Text(
+                                'Rental Income',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 3),
+                              Text(
+                                '14 July 2023',
+                                style: TextStyle(fontSize: 15),
+                              )
+                            ],
                           ),
+                          trailing: const Text(
+                            'Rs+6500.0',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ),
+                          onTap: () {
+                            //print('1st transaction tapped');
+                            //Navigator.pushNamed(context, TestConfirmation.id);
+                          },
                         ),
-                        SizedBox(height: 3),
-                        Text(
-                          '14 July 2023',
-                          style: TextStyle(fontSize: 15),
-                        )
-                      ],
-                    ),
-                    trailing: const Text(
-                      'Rs+6500.0',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.lightBlueAccent,
                       ),
                     ),
-                    onTap: () {
-                      //print('1st transaction tapped');
-                      //Navigator.pushNamed(context, TestConfirmation.id);
-                    },
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 60,
-                child: Card(
-                  child: ListTile(
-                    leading: const Icon(Icons.local_grocery_store, size: 30.0),
-                    title: const Column(
-                      children: [
-                        Text(
-                          'Grocery Shopping',
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
+                    SizedBox(
+                      height: 60,
+                      child: Card(
+                        child: ListTile(
+                          leading:
+                              const Icon(Icons.local_grocery_store, size: 30.0),
+                          title: const Column(
+                            children: [
+                              Text(
+                                'Grocery Shopping',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 3),
+                              Text(
+                                '14 Aug 2023',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ],
                           ),
+                          trailing: const Text(
+                            'Rs-5800.0',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.red,
+                            ),
+                          ),
+                          onTap: () {
+                            //print('1st transaction tapped');
+                            //Navigator.pushNamed(context, TestConfirmation.id);
+                          },
                         ),
-                        SizedBox(height: 3),
-                        Text(
-                          '14 Aug 2023',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                    trailing: const Text(
-                      'Rs-5800.0',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.red,
                       ),
                     ),
-                    onTap: () {
-                      //print('1st transaction tapped');
-                      //Navigator.pushNamed(context, TestConfirmation.id);
-                    },
-                  ),
+                  ],
                 ),
-              ),
+              )
             ],
           ),
         ),
