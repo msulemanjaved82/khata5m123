@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                 'Welcome,',
                 style: TextStyle(
                   fontSize: 22,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               const Text(
@@ -61,7 +61,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               const Placeholder(
-                fallbackHeight: 200,
+                fallbackHeight: 199,
               ),
               const SizedBox(height: 10),
               const Text(
@@ -72,140 +72,30 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 0),
-              SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: Card(
-                            elevation: 3,
-                            child: Container(
-                              padding: const EdgeInsets.all(0),
-                              child: IconButton(
-                                icon: const Icon(
-                                  Icons.change_circle_outlined,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 99, 99, 99),
-                                ),
-                                onPressed: () {},
-                                alignment: Alignment.center,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Text(
-                          'Change',
-                        ),
-                      ],
+                    EasyOperations(
+                      icon: Icons.change_circle_outlined,
+                      label: 'Change',
                     ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: Card(
-                            elevation: 3,
-                            child: Container(
-                              padding: const EdgeInsets.all(0),
-                              child: IconButton(
-                                icon: const Icon(
-                                  Icons.arrow_upward,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 99, 99, 99),
-                                ),
-                                onPressed: () {},
-                                alignment: Alignment.center,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Text(
-                          'Transfer',
-                        ),
-                      ],
+                    EasyOperations(
+                      icon: Icons.arrow_upward,
+                      label: 'Transfer',
                     ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: Card(
-                            elevation: 3,
-                            child: Container(
-                              padding: const EdgeInsets.all(0),
-                              child: IconButton(
-                                icon: const Icon(
-                                  Icons.arrow_downward,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 99, 99, 99),
-                                ),
-                                onPressed: () {},
-                                alignment: Alignment.center,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Text(
-                          'Income',
-                        ),
-                      ],
+                    EasyOperations(
+                      icon: Icons.arrow_downward,
+                      label: 'Income',
                     ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: Card(
-                            elevation: 3,
-                            child: Container(
-                              padding: const EdgeInsets.all(0),
-                              child: IconButton(
-                                icon: const Icon(
-                                  Icons.receipt_long,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 99, 99, 99),
-                                ),
-                                onPressed: () {},
-                                alignment: Alignment.center,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Text(
-                          'Receipts',
-                        ),
-                      ],
+                    EasyOperations(
+                      icon: Icons.paste,
+                      label: 'Receipt',
                     ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: Card(
-                            elevation: 3,
-                            child: Container(
-                              padding: const EdgeInsets.all(0),
-                              child: IconButton(
-                                icon: const Icon(
-                                  Icons.menu_book,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 99, 99, 99),
-                                ),
-                                onPressed: () {},
-                                alignment: Alignment.center,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Text(
-                          'More',
-                        ),
-                      ],
+                    EasyOperations(
+                      icon: Icons.read_more,
+                      label: 'More',
                     ),
                   ],
                 ),
@@ -218,7 +108,7 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 12),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
@@ -259,7 +149,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 60,
+                      height: 65,
                       child: Card(
                         child: ListTile(
                           leading:
@@ -300,18 +190,19 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        // Bottom Navigation
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
           selectedItemColor: Colors.blueAccent,
           unselectedItemColor:
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(.60),
+              const Color.fromARGB(255, 0, 0, 0).withOpacity(.6),
           selectedFontSize: 14,
           unselectedFontSize: 14,
           onTap: (value) {
             // Respond to item press.
           },
-          items: const [
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               label: 'Home',
               icon: Icon(Icons.home),
@@ -330,5 +221,44 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+// Easy Operations constructor
+class EasyOperations extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  const EasyOperations({
+    super.key,
+    required this.icon,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          width: 80,
+          height: 80,
+          child: Card(
+            elevation: 3,
+            child: Container(
+              padding: const EdgeInsets.all(0),
+              child: IconButton(
+                icon: Icon(
+                  icon,
+                  size: 30,
+                  color: const Color.fromARGB(255, 99, 99, 99),
+                ),
+                onPressed: () {},
+                alignment: Alignment.center,
+              ),
+            ),
+          ),
+        ),
+        Text(label),
+      ],
+    );
   }
 }

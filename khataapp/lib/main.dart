@@ -10,10 +10,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Lato',
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
+      ),
       debugShowCheckedModeBanner: false,
+
       // theme: ThemeData.light(useMaterial3: true),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
