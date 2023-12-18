@@ -242,7 +242,7 @@ class EasyOperations extends StatelessWidget {
           width: 80,
           height: 80,
           child: Card(
-            elevation: 3,
+            elevation: 4,
             child: Container(
               padding: const EdgeInsets.all(0),
               child: IconButton(
