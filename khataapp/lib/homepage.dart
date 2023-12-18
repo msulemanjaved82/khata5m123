@@ -1,4 +1,6 @@
 // this is home page
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -40,154 +42,113 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Welcome,',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w700,
+        body: const SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Welcome,',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              ),
-              const Text(
-                'Muhammad Hamza',
-                style: TextStyle(
-                  fontSize: 17,
-                  color: Colors.black54,
+                Text(
+                  'Muhammad Hamza',
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Colors.black54,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Placeholder(
-                fallbackHeight: 199,
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'Easy Operations',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                SizedBox(height: 10),
+                Placeholder(
+                  fallbackHeight: 199,
                 ),
-              ),
-              const SizedBox(height: 0),
-              const SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    EasyOperations(
-                      icon: Icons.change_circle_outlined,
-                      label: 'Change',
-                    ),
-                    EasyOperations(
-                      icon: Icons.arrow_upward,
-                      label: 'Transfer',
-                    ),
-                    EasyOperations(
-                      icon: Icons.arrow_downward,
-                      label: 'Income',
-                    ),
-                    EasyOperations(
-                      icon: Icons.paste,
-                      label: 'Receipt',
-                    ),
-                    EasyOperations(
-                      icon: Icons.read_more,
-                      label: 'More',
-                    ),
-                  ],
+                SizedBox(height: 10),
+                Text(
+                  'Easy Operations',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 22),
-              const Text(
-                'Previous Transactions',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 12),
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 65,
-                      child: Card(
-                        child: ListTile(
-                          leading: const Icon(Icons.home, size: 30.0),
-                          title: const Column(
-                            children: [
-                              Text(
-                                'Rental Income',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 3),
-                              Text(
-                                '14 July 2023',
-                                style: TextStyle(fontSize: 15),
-                              )
-                            ],
-                          ),
-                          trailing: const Text(
-                            'Rs+6500.0',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.lightBlueAccent,
-                            ),
-                          ),
-                          onTap: () {
-                            //print('1st transaction tapped');
-                            //Navigator.pushNamed(context, TestConfirmation.id);
-                          },
-                        ),
+                SizedBox(height: 0),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      EasyOperations(
+                        icon: Icons.change_circle_outlined,
+                        label: 'Change',
                       ),
-                    ),
-                    SizedBox(
-                      height: 65,
-                      child: Card(
-                        child: ListTile(
-                          leading:
-                              const Icon(Icons.local_grocery_store, size: 30.0),
-                          title: const Column(
-                            children: [
-                              Text(
-                                'Grocery Shopping',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 3),
-                              Text(
-                                '14 Aug 2023',
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ],
-                          ),
-                          trailing: const Text(
-                            'Rs-5800.0',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.red,
-                            ),
-                          ),
-                          onTap: () {
-                            //print('1st transaction tapped');
-                            //Navigator.pushNamed(context, TestConfirmation.id);
-                          },
-                        ),
+                      EasyOperations(
+                        icon: Icons.arrow_upward,
+                        label: 'Transfer',
                       ),
-                    ),
-                  ],
+                      EasyOperations(
+                        icon: Icons.arrow_downward,
+                        label: 'Income',
+                      ),
+                      EasyOperations(
+                        icon: Icons.paste,
+                        label: 'Receipt',
+                      ),
+                      EasyOperations(
+                        icon: Icons.read_more,
+                        label: 'More',
+                      ),
+                    ],
+                  ),
                 ),
-              )
-            ],
+                SizedBox(height: 22),
+                Text(
+                  'Previous Transactions',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 12),
+                Column(
+                  children: [
+                    PreviousTransactions(
+                        transIcon: Icons.shopping_basket,
+                        itemname: 'Market',
+                        date: '21 Aug 2023',
+                        amount: '-3,500',
+                        colorM: Colors.red),
+                    PreviousTransactions(
+                        transIcon: Icons.home_repair_service,
+                        itemname: 'Home Appliances',
+                        date: '19 Aug 2023',
+                        amount: '-9,500',
+                        colorM: Colors.red),
+                    PreviousTransactions(
+                        transIcon: Icons.currency_bitcoin,
+                        itemname: 'Trading income',
+                        date: '14 Aug 2023',
+                        amount: '+15,000',
+                        colorM: Colors.blue),
+                    PreviousTransactions(
+                        transIcon: Icons.car_repair,
+                        itemname: 'Car Mantainance',
+                        date: '8 Aug 2023',
+                        amount: '-5,500',
+                        colorM: Colors.red),
+                    PreviousTransactions(
+                        transIcon: Icons.attach_money,
+                        itemname: 'Office Income',
+                        date: '2 Aug 2023',
+                        amount: '+60,000',
+                        colorM: Colors.blue),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
         // Bottom Navigation
@@ -259,6 +220,58 @@ class EasyOperations extends StatelessWidget {
         ),
         Text(label),
       ],
+    );
+  }
+}
+
+class PreviousTransactions extends StatelessWidget {
+  final IconData transIcon;
+  final String itemname;
+  final String date;
+  final String amount;
+  final Color colorM;
+  const PreviousTransactions({
+    super.key,
+    required this.transIcon,
+    required this.itemname,
+    required this.date,
+    required this.amount,
+    required this.colorM,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 70,
+      child: Card(
+        elevation: 16,
+        child: ListTile(
+          leading: Icon(transIcon, size: 30.0),
+          title: Column(
+            children: [
+              Text(
+                itemname,
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 3),
+              Text(
+                date,
+                style: const TextStyle(fontSize: 15),
+              ),
+            ],
+          ),
+          trailing: Text(
+            'Rs $amount',
+            style: TextStyle(
+              fontSize: 20,
+              color: colorM,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
