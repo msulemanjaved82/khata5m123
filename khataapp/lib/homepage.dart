@@ -19,8 +19,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body:
-            currentPage == 0 ? const HomePageItems() : const StatisticsScreen(),
-
+            //currentPage == 0 ? const HomePageItems() : const StatisticsScreen(),
+            pages[currentPage],
         // Bottom Navigation
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
