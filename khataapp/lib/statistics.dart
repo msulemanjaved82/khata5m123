@@ -41,40 +41,52 @@ class StatisticsScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Rs 5,00,000',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              Text(
+              const Text(
                 'My Total Earning',
                 style: TextStyle(
                   fontSize: 17,
                   color: Colors.black54,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 29,
               ),
-              Row(children: [
-                Text(
-                  'All My Expenses',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'All My Expenses',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-              ]),
-              Column(
+                  GestureDetector(
+                    child: const Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 15,
+                        // fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              const Column(
                 children: [
                   Expenses(
                       transIcon: Icons.shopping_basket,
@@ -108,19 +120,31 @@ class StatisticsScreen extends StatelessWidget {
                       colorM: Colors.blue),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 29,
               ),
-              Row(children: [
-                Text(
-                  'All My Earnings',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'All My Earnings',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-              ]),
-              Column(
+                  GestureDetector(
+                    child: const Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 15,
+                        // fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Column(
                 children: [
                   Income(
                       transIcon: Icons.share,

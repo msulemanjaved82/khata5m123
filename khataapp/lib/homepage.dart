@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:khataapp/homepagei.dart';
+import 'package:khataapp/morepage.dart';
+import 'package:khataapp/profilepage.dart';
 import 'package:khataapp/statistics.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +15,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentPage = 0;
-  List<Widget> pages = const [HomePageItems(), StatisticsScreen()];
+  List<Widget> pages = const [
+    HomePageItems(),
+    StatisticsScreen(),
+    More(),
+    ProfileScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
