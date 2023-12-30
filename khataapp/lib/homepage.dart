@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:khataapp/homepagei.dart';
-import 'package:khataapp/morepage.dart';
+import 'package:khataapp/add.dart';
 import 'package:khataapp/profilepage.dart';
 import 'package:khataapp/statistics.dart';
 
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> pages = const [
     HomePageItems(),
     StatisticsScreen(),
-    More(),
+    AddItems(),
     ProfileScreen()
   ];
   @override
@@ -53,8 +53,8 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.bar_chart),
             ),
             BottomNavigationBarItem(
-              label: 'More',
-              icon: Icon(Icons.menu_open),
+              label: 'Add',
+              icon: Icon(Icons.add),
             ),
             BottomNavigationBarItem(
               label: 'Profile',
