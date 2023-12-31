@@ -14,7 +14,7 @@ class _MyWidgetState extends State<HomePageItems> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.lightBlueAccent,
         elevation: 0,
         // Leading Icon
         leading: IconButton(

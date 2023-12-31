@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:khataapp/homepagei.dart';
+import 'package:khataapp/add.dart';
+import 'package:khataapp/profilepage.dart';
 import 'package:khataapp/statistics.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +15,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentPage = 0;
-  List<Widget> pages = const [HomePageItems(), StatisticsScreen()];
+  List<Widget> pages = const [
+    HomePageItems(),
+    StatisticsScreen(),
+    AddItems(),
+    ProfileScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +53,8 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.bar_chart),
             ),
             BottomNavigationBarItem(
-              label: 'More',
-              icon: Icon(Icons.menu_open),
+              label: 'Add',
+              icon: Icon(Icons.add),
             ),
             BottomNavigationBarItem(
               label: 'Profile',
