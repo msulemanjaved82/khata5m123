@@ -7,7 +7,7 @@ class AddItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.lightBlueAccent,
         elevation: 0,
         // Leading Icon
 

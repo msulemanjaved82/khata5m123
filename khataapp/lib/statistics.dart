@@ -10,7 +10,7 @@ class StatisticsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.lightBlueAccent,
         elevation: 0,
         // Leading Icon
         leading: IconButton(
