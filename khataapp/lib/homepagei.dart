@@ -148,6 +148,8 @@ class _MyWidgetState extends State<HomePageItems> {
                       date: '2 Aug 2023',
                       amount: '+60,000',
                       colorM: Colors.blue),
+
+
                 ],
               )
             ],
