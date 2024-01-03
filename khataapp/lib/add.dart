@@ -23,60 +23,63 @@ class AddItems extends StatelessWidget {
         // More Icons
       ),
       body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 50,
-            ),
-            const Text(
-              'Add the new Items According to income and expence',
-              style: TextStyle(
-                fontSize: 15,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 50,
               ),
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-            const DropdownMenuExample(),
-            const SizedBox(
-              height: 50,
-            ),
-            const SizedBox(
-              width: 200,
-              child: TextField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: 'Enter the amount '),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const DropdownMenuExample2(),
-            const SizedBox(
-              height: 100,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.lightBlueAccent,
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                      20,
-                    ),
-                  )),
-              onPressed: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 18),
-                child: Text(
-                  'Edit',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 23, 0, 194)),
+              const Text(
+                'Add the new Items According to income and expence',
+                style: TextStyle(
+                  fontSize: 15,
                 ),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 100,
+              ),
+              const DropdownMenuExample(),
+              const SizedBox(
+                height: 50,
+              ),
+              const SizedBox(
+                width: 200,
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(hintText: 'Enter the amount '),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const DropdownMenuExample2(),
+              const SizedBox(
+                height: 100,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightBlueAccent,
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
+                    )),
+                onPressed: () {},
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 18),
+                  child: Text(
+                    'Edit',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 23, 0, 194)),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
