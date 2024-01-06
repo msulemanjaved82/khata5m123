@@ -15,11 +15,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentPage = 0;
-  List<Widget> pages = const [
-    HomePageItems(),
-    StatisticsScreen(),
-    AddItems(),
-    ProfileScreen()
+  List<Widget> pages = [
+    const HomePageItems(),
+    const StatisticsScreen(),
+    const AddItems(),
+    const ProfileScreen()
   ];
   @override
   Widget build(BuildContext context) {

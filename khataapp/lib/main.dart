@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:khataapp/homepage.dart';
+import 'package:khataapp/lockscreen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       // theme: ThemeData.light(useMaterial3: true),
-      home: const HomePage(),
+      home: LockScreenH(),
     );
   }
 }
