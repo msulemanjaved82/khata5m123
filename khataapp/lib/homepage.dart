@@ -1,7 +1,7 @@
 // this is home page
 
 import 'package:flutter/material.dart';
-import 'package:khataapp/homepagei.dart';
+import 'package:khataapp/homepageitems.dart';
 import 'package:khataapp/add.dart';
 import 'package:khataapp/profilepage.dart';
 import 'package:khataapp/statistics.dart';

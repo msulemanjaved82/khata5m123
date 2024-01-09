@@ -5,6 +5,8 @@ class AddItems extends StatelessWidget {
   const AddItems({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final TextEditingController dataController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlueAccent,
@@ -43,11 +45,13 @@ class AddItems extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 200,
                 child: TextField(
+                  controller: dataController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(hintText: 'Enter the amount '),
+                  decoration:
+                      const InputDecoration(hintText: 'Enter the amount '),
                 ),
               ),
               const SizedBox(

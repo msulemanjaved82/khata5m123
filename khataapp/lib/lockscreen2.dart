@@ -1,6 +1,7 @@
 // Made By Hamza
 import 'package:flutter/material.dart';
 import 'package:khataapp/homepage.dart';
+import 'dart:convert';
 
 class LockScreenH extends StatefulWidget {
   const LockScreenH({super.key});
@@ -13,9 +14,20 @@ class _LockScreenStateH extends State<LockScreenH> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  Future<String> _readCorrectPin() async {
+    // Read the contents of the JSON file
+    String data =
+        await DefaultAssetBundle.of(context).loadString('assets/pin_data.json');
+    Map<String, dynamic> jsonData = json.decode(data);
+
+    // Get and return the correct PIN from the JSON file
+    return jsonData['pin'];
+  }
+
   void _onUnlockButtonTap() async {
     // Simulating reading the correct PIN from a JSON file
-    String correctPin = "1234"; // Replace with actual logic to get correct PIN
+    String correctPin =
+        await _readCorrectPin(); // Replace with actual logic to get correct PIN
 
     if (enteredPin == correctPin) {
       Navigator.pushReplacement(
@@ -44,6 +56,14 @@ class _LockScreenStateH extends State<LockScreenH> {
         enteredPin = '';
       });
     }
+  }
+
+  void _onPinButtonTap(String pin) {
+    setState(() {
+      if (enteredPin.length < 4) {
+        enteredPin += pin;
+      }
+    });
   }
 
   Widget _buildPinButton(String text) {
@@ -189,13 +209,5 @@ class _LockScreenStateH extends State<LockScreenH> {
         ),
       ),
     );
-  }
-
-  void _onPinButtonTap(String pin) {
-    setState(() {
-      if (enteredPin.length < 4) {
-        enteredPin += pin;
-      }
-    });
   }
 }

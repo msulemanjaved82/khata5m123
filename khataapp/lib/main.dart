@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       // theme: ThemeData.light(useMaterial3: true),
-      home: LockScreenH(),
+      home: const LockScreenH(),
     );
   }
 }
